@@ -66,7 +66,7 @@ void RenderFillExtrusionLayer::render(PaintParameters& parameters, RenderSource*
         parameters.staticData.depthRenderbuffer->shouldClear(false);
 
         parameters.context.setStencilMode(gl::StencilMode::disabled());
-        parameters.context.clear(Color{ 0.0f, 0.0f, 0.0f, 0.0f }, depthClearValue, {});
+        parameters.context.clear(Color{ 0.0f, 0.0f, 0.0f, 0.0f }, depthClearValue);
 
         if (evaluated.get<FillExtrusionPattern>().from.empty()) {
             for (const RenderTile& tile : renderTiles) {

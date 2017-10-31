@@ -125,7 +125,7 @@ void main() {
     backend.bind();
 
     // First, draw red to the bound FBO.
-    context.clear(Color::red(), {}, {});
+    context.clear(Color::red());
 
     // Then, create a texture, bind it, and render yellow to that texture. This should not
     // affect the originally bound FBO.
@@ -137,7 +137,7 @@ void main() {
 
     texture.bind();
 
-    context.clear(Color(), {}, {});
+    context.clear(Color());
 
     MBGL_CHECK_ERROR(glUseProgram(paintShader.program));
     MBGL_CHECK_ERROR(glBindBuffer(GL_ARRAY_BUFFER, triangleBuffer.buffer));

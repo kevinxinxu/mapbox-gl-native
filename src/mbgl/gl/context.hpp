@@ -145,8 +145,9 @@ public:
                      TextureWrap wrapY = TextureWrap::Clamp);
 
     void clear(optional<mbgl::Color> color,
-               optional<float> depth,
-               optional<int32_t> stencil);
+               optional<float> depth = value::ClearDepth::Default,
+               optional<int32_t> stencil = value::ClearStencil::Default,
+               optional<ColorMode::Mask> colorMask = value::ColorMask::Default);
 
     void setDrawMode(const Points&);
     void setDrawMode(const Lines&);
